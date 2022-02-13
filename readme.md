@@ -40,7 +40,7 @@ As a writer, I would like to update or delete blogs I have created.
 
 In your terminal:
 
- * $ git clone https://github.com/Tracymbone/password_locker
+ * $ git clone 
  * $ cd Password_locker
 ### Running the Application
 
