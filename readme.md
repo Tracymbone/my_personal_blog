@@ -53,10 +53,14 @@ In your terminal:
 ### Technologies Used
 
 
-* Python
+* Python3.8
+
 * Flask
+
 * Git
+
 * Heroku
+
 * css
 
 ### contact information
