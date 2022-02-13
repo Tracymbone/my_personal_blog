@@ -1,0 +1,36 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid mt-4">
+    <div class="navbar-header">
+      <a id="top" class="navbar-brand" href="/">My Personal Blog</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="/">Home</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      {% if current_user.is_authenticated %}
+      <li>
+        <a
+          style="font-size: 15px; color:white"
+          class="btn btn-success"
+          href="{{url_for('main.pitch',id=current_user.id)}}"
+          >New Post</a
+        >
+        <li> <a  href="{{url_for('main.profile',my_name=current_user.username)}}">Profile</a></li>
+
+      <li><a href="{{url_for('auth.logout')}}">Sign out</a></li>
+      {% else %}
+       <li>
+        <a
+          style="font-size: 15px; color:white"
+          class="btn btn-success"
+          href="#"
+          >New Post</a
+        >
+        <li> <a  href="#">Profile</a></li>
+
+      <li><a href="{{url_for('auth.register')}}"> Register</a></li>
+      <li><a href="{{url_for('auth.login')}}">Login</a></li>
+      {%endif%}
+    </ul>
+  </div>
+</nav>
