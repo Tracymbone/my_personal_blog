@@ -40,18 +40,17 @@ As a writer, I would like to update or delete blogs I have created.
 
 In your terminal:
 
- * $ git clone 
- * $ cd Password_locker
-### Running the Application
+ * $ git clone https://github.com/Tracymbone/my_personal_blog
 
-To run the application, in your terminal:
- * $ #!/usr/bin/env python3.8
- * $ chmod +x run.py
- * $ ./run.py
+ * $ cd my_personal_blog
 
 ### Technologies Used
 
-* Python3.8
+
+* Python
+* Flask
+* Git
+* Heroku
 
 ### contact information
 
