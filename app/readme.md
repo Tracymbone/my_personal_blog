@@ -11,7 +11,7 @@ Software Developer
 
 ### Description
 
-
+This is about my personal blog which is an online journal or informational website displaying information in reverse chronological order,with the latest posts appearing first,at the top.
 
 ### User Stories
 These are the behaviours/features that the application implements for use by a user.
