@@ -1,4 +1,24 @@
 {%extends 'base.html'%}
 {% block content %}
-<h1>Personal blog</h1>
+<div class="container-fluid top_image" style="background-image:url({{url_for('static',filename='./images/image.jpg')}})">
+<h3 style="color:white" class="text-center"><u> Random Quotes.</u></h3>
+    <h2 style="color:white">{{quote.quote}}</h2>
+    <p style="color:white">by: {{quote.author}}</p>
+</div>
+<div class="container">
+    <div class="posts">
+{%for post in posts%}
+<div class="middle">
+
+<h2>{{post.category}}
+</h2>
+<h3><a href="{{url_for('main.comment',id=post.id)}}">{{post.title}}</a>
+</h3>
+<p>{{post.post}}</p>
+</div>
+       {%endfor%}
+   
+    </div>
+    </div>
+
 {%endblock%}
