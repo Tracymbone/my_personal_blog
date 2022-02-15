@@ -36,6 +36,10 @@ As a writer, I would like to delete comments that I find insulting or degrading.
 
 As a writer, I would like to update or delete blogs I have created.
 
+## Project link
+
+This link will take you to my project https://tracypersonal.herokuapp.com/
+
 ## Screenshot
 
 
@@ -73,3 +77,4 @@ In your terminal:
 tressy.mbone@student.moringaschool.com
 
 tracymbone1@gmail.com
+
