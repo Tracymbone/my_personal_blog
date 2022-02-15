@@ -39,8 +39,7 @@ As a writer, I would like to update or delete blogs I have created.
 ## Screenshot
 
 
-
-
+![Blog Post](screen.png)
 
 
 ### Cloning
