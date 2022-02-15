@@ -15,6 +15,7 @@ def register():
         db.session.add(user)
         db.session.commit()
         return redirect(url_for('auth.login'))
+        mail_message("Hello, Welcome To Tracy's Blog.", "email/welcome", client.email, subscriber=client)
 
     return render_template('auth/register.html', form=reg_form)
 
