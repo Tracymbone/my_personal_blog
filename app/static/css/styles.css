@@ -1,0 +1,20 @@
+.top_image{
+min-height:50vh !important;
+}
+body{
+    font-family:'Times New Roman', Times, serif
+}
+.posts{
+padding:10px;
+text-align:center;
+min-height:2Ovh !important
+
+}
+.middle{
+border:1px solid #000000;
+    float:left;
+    margin: 2px;
+    width:48%;
+    padding: 10px;
+    background-color:#ddd;
+}

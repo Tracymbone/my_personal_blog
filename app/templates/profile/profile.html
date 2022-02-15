@@ -1,0 +1,48 @@
+{%extends 'base.html'%} {%block content%}
+
+<div class="container profile">
+  <div class="row">
+    <div class="col-md-3">
+      {%if user.profile_pic%}
+
+      <img
+        src="{{url_for('static',filename=user.profile_pic)}}"
+        alt=""
+        class="img-thumbnail"
+      />
+      {%else%}
+      <h3>No Profile Picture Found</h3>
+      {%endif%}
+      <h2>{{user.username| capitalize}}</h2>
+      {% if user == current_user %}
+      <form
+        action="{{url_for('main.update_image',my_name=user.username)}}"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <input type="file" name="photo" class="form-control" required />
+        <br />
+        <input class="btn btn-success" type="submit" />
+      </form>
+      {% endif %}
+    </div>
+    <div class="col-md-3">
+      {%if user.biography%}
+      <p>{{user.biography}}</p>
+      {%else%}
+      <p>{{user.username}} has no biography yet</p>
+      {%endif%} {% if user == current_user %}
+      <button class="btn btn-success btn-lg">
+        <a
+          style="color: white"
+          href="{{url_for('main.edit_profile',my_name=user.username)}}"
+          >Edit Profile</a
+        >
+      </button>
+      {% endif %}
+    </div>
+    <div class="col-md-6"></div>
+  </div>
+</div>
+
+{%endblock%}

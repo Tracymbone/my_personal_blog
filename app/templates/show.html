@@ -1,0 +1,31 @@
+{%extends 'base.html'%} {%block content%}
+
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+<br />
+<div class="container-fluid ">
+    <div class="row">
+        <div class="col-md-12">
+  {%for post in all_posts%}
+    <div class="card editing">
+
+          <h1>{{post.category}}</h1>
+          <h2 >{{post.title}}</h2>
+          <h2 >{{post.post}}</h2>
+
+          <div class="row">
+                   <button class="btn btn-warning btn-lg"><a style="color:white;font-size:20px" href="{{url_for('main.edit',id=post.id)}}"><i class="fa fa-edit"></i></a></button>
+              <button class="btn btn-danger btn-lg"><a style="color:white;font-size:20px" href="{{url_for('main.delete',id=post.id)}}"><i class="fa fa-trash"></i></a></button>
+
+          </div>
+
+    </div>
+    {%endfor%}
+    </div>
+</div>
+</div>
+
+
+{%endblock%}
