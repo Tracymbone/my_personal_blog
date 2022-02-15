@@ -12,16 +12,12 @@ class Post(db.Model):
     post = db.Column(db.String(255))
     posted = db.Column(db.DateTime, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
-    upvote = db.relationship('Upvote',backref='new',lazy='dynamic')
-    downvote = db.relationship('Downvote',backref='new',lazy='dynamic')
     comment = db.relationship('Comment',backref='new',lazy='dynamic')
 
 
     def save_post(self):
         db.session.add(self)
         db.session.commit()
-
-
 
 
 class User(UserMixin,db.Model):
@@ -33,8 +29,6 @@ class User(UserMixin,db.Model):
     profile_pic=db.Column(db.String())
     password_secure=db.Column(db.String(255))
     posts= db.relationship('Post',backref = 'user',lazy ="dynamic")
-    upvote = db.relationship('Upvote',backref='user',lazy='dynamic')
-    downvote = db.relationship('Downvote',backref='user',lazy='dynamic')
     comment = db.relationship('Comment',backref='user',lazy='dynamic')
 
 
@@ -60,44 +54,6 @@ def load_user(user_id):
 def __repr__(self):
     return f'User: {self.name}'
 
-
-class Upvote(db.Model):
-    __tablename__ = 'upvotes'
-    id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
-    post_id = db.Column(db.Integer, db.ForeignKey('posts.id'))
-
-    def save(self):
-        db.session.add(self)
-        db.session.commit()
-
-    @classmethod
-    def get_upvotes(cls,id):
-        upvote_results = Upvote.query.filter_by(post_id=id).all()
-        return upvote_results
-
-    def __repr__(self):
-        return f'{self.user_id}:{self.post_id}'
-
-
-class Downvote(db.Model):
-    __tablename__ = 'downvotes'
-
-    id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
-    post_id = db.Column(db.Integer, db.ForeignKey('posts.id'))
-
-    def save(self):
-        db.session.add(self)
-        db.session.commit()
-
-    @classmethod
-    def get_downvotes(cls, id):
-        downvote_results = Downvote.query.filter_by(post_id=id).all()
-        return downvote_results
-
-    def __repr__(self):
-        return f'{self.user_id}:{self.post_id}'
 
 
 class Comment(db.Model):
