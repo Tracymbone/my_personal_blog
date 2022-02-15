@@ -12,21 +12,14 @@
         <a
           style="font-size: 15px; color:white"
           class="btn btn-success"
-          href="{{url_for('main.pitch',id=current_user.id)}}"
+          href="{{url_for('main.post',id=current_user.id)}}"
           >New Post</a
         >
         <li> <a  href="{{url_for('main.profile',my_name=current_user.username)}}">Profile</a></li>
 
       <li><a href="{{url_for('auth.logout')}}">Sign out</a></li>
       {% else %}
-       <li>
-        <a
-          style="font-size: 15px; color:white"
-          class="btn btn-success"
-          href="#"
-          >New Post</a
-        >
-        <li> <a  href="#">Profile</a></li>
+
 
       <li><a href="{{url_for('auth.register')}}"> Register</a></li>
       <li><a href="{{url_for('auth.login')}}">Login</a></li>
