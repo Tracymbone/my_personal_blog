@@ -38,7 +38,7 @@ As a writer, I would like to update or delete blogs I have created.
 
 ## Project link
 
-This link will take you to my project https://tracypersonal.herokuapp.com/
+This link will take you to my project https://mypersonaltracy.herokuapp.com/
 
 ## Screenshot
 
