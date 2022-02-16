@@ -28,7 +28,7 @@ def _deactivate(args):
 _deactivate(["nondestructive"])
 aliases["deactivate"] = _deactivate
 
-$VIRTUAL_ENV = r"/home/moringa/Desktop/my_personal_blog/virtual"
+$VIRTUAL_ENV = r"/home/moringa/Downloads/Moringa Projects/my_personal_blog/virtual"
 
 $_OLD_VIRTUAL_PATH = $PATH
 $PATH = $PATH[:]
